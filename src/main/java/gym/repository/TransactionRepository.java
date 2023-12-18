@@ -12,6 +12,6 @@ public interface TransactionRepository extends JpaRepository<EquipmentTransactio
     @Query("select t from EquipmentTransaction t")
     List<EquipmentTransaction> getTransactions();
 
-    @EntityGraph(attributePaths = {"equipment", "equipment.equipmentType"})
+    @EntityGraph(attributePaths = {"equipment", "customer", "equipment.equipmentType"})
     List<EquipmentTransaction> getEquipmentTransactionByCustomerLogin(String login);
 }

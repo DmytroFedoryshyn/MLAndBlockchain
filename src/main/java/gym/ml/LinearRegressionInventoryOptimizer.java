@@ -35,7 +35,7 @@ public class LinearRegressionInventoryOptimizer {
         for (int i = 0; i < data.numInstances(); i++) {
             Instance instance = data.instance(i);
 
-            double predictedValue = linearRegression.classifyInstance(instance) * 5;
+            double predictedValue = linearRegression.classifyInstance(instance);
 
             BigDecimal bd = new BigDecimal(predictedValue);
             bd = bd.setScale(2, RoundingMode.HALF_UP);
